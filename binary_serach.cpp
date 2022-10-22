@@ -6,19 +6,25 @@ int binarySearch(int array[], int size, int searchValue)
     int low = 0;
     int high = size - 1;
     int mid;
-    mid = (low+high)/2
+   
+    while (low <= high){
+        mid = (low + high) / 2;
 
-    if(searchValue==array[mid]{
-        return mid;
+
+        if(searchValue==array[mid]){
+            return mid;
+        }
+
+        else if(searchValue>array[mid]){
+            low = mid + 1;
+        }
+
+        else {
+            high = mid - 1;
+        }
     }
 
-    else if(searchValue>array[mid]){
-        low = mid+1;
-    }
-
-    else {
-        high = mid-1;
-    }
+    return -1;
 }
 
 int main()
@@ -41,6 +47,6 @@ int main()
     else
     {
         cout << "The number " << userValue << " was not found" << endl;
-
-        return 0;
     }
+    return 0;
+}
